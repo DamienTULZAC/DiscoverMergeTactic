@@ -1,0 +1,29 @@
+{
+  "name": "discovermergetactic",
+  "private": true,
+  "version": "1.0.0",
+  "description": "web app to present all Merge Tactic content of Clash Royal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\"",
+    "install:all": "npm install && npm install --prefix backend && npm install --save-dev nodemon --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamienTULZAC/DiscoverMergeTactic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamienTULZAC/DiscoverMergeTactic/issues"
+  },
+  "homepage": "https://github.com/DamienTULZAC/DiscoverMergeTactic#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
