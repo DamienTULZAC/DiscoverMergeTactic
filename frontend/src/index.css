@@ -1,13 +1,207 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* === VARIABLES === */
+:root {
+  --blue: #2a75e6;          /* bleu royal */
+  --blue-dark: #0f1720;     /* fond très foncé / arrière-plan */
+  --gold: #f4c542;          /* accent doré */
+  --gray: #1f2937;          /* gris foncé pour cartes / panels */
+  --text-light: #e6eef8;    /* texte clair */
+  --accent-light: #6ac7ff;  /* accent secondaire / effet lumineux */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--blue-dark);
+  background-image: 
+    linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%);
+  background-size: 20px 20px;
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, var(--blue), #1a4fbf);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* === HERO SECTION === */
+.hero {
+  margin-top: 80px; /* espace pour la navbar */
+  position: relative;
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta {
+  background: var(--blue);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* === FOOTER === */
+.footer {
+  background: #111a2c;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+.footer strong {
+  color: var(--gold);
+}
+
+
+
+/* === Police === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+h1, h2, .card-name, .leader-name {
+  font-family: 'Bangers', cursive;
+}
+
+
+
+
+/* === Card Leader === */
+.card-leader {
+  background: var(--blue-dark);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  width: 200px;
+  color: var(--text-light);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+.card-leader .leader-img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--gold);
+}
+.card-leader .leader-info {
+  padding: 16px;
+}
+.card-leader .leader-name {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+.card-leader .leader-ability {
+  font-weight: bold;
+  margin: 8px 0;
+}
+.card-leader .leader-desc {
+  font-size: 0.9rem;
+}
+
+
+
+
+/* === Card Leader === */
+.card-playable {
+  background: var(--gray);
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 180px;
+  color: var(--text-light);
+}
+.card-playable .card-img {
+  width: 100%;
+  height: auto;
+}
+.card-playable .card-info {
+  padding: 12px;
+}
+.card-playable .card-name {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.card-playable .card-cost {
+  margin: 8px 0;
+  font-weight: bold;
+}
+.card-playable .card-desc {
+  font-size: 0.9rem;
 }

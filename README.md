@@ -1,3 +1,58 @@
-## INSTALLATION
+# DiscoverMergeTactic
 
-- npm run install:all : 
+## INSTALLATION RAPIDE
+
+<span style="color:red; font-weight:bold;">⚠ NE FAIRE QU'UNE SEULE FOIS ⚠</span>  
+`npm run install:all` : installation de tous les modules NodeJS, frontend React et backend nécessaires au lancement de l'application.
+
+---
+
+`npm start` : lancement simultané des serveurs frontend et backend sur deux ports différents :  
+- Frontend : `http://localhost:7654`  
+- Backend : `http://localhost:3000`
+
+## ARBORESCENCE
+
+```
+DiscoverMergeTactic/
+├─ frontend/
+│ ├─ public/
+│ │ ├─ index.html
+│ │ └─ ...
+│ ├─ src/
+│ │ ├─ components/
+│ │ │ ├─ NavBar.jsx
+│ │ │ ├─ CardItem.jsx
+│ │ │ └─ LeaderItem.jsx
+│ │ ├─ pages/
+│ │ │ ├─ Home.jsx
+│ │ │ ├─ Cards.jsx
+│ │ │ ├─ Leaders.jsx
+│ │ │ └─ About.jsx
+│ │ ├─ services/
+│ │ │ ├─ service1.jsx
+│ │ │ └─ ...
+│ │ ├─ assets/
+│ │ │ ├─ asset1.jsx
+│ │ │ └─ ...
+│ │ ├─ App.js
+│ │ ├─ App.css
+│ │ ├─ index.js
+│ │ ├─ index.css
+│ │ └─ App.test.js
+│ └─ package.json
+├─ backend/
+│ ├─ server.js
+│ └─ package.json
+├─ package.json
+└─ .gitignore
+```
+
+
+## AJOUT
+
+### Front End
+
+- **npm install react-router-dom**
+└─ Permet de gérer la navigation entre plusieurs pages dans ton app React, sans recharger le site à chaque fois (= SPA).
+<br >
