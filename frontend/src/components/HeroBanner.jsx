@@ -1,19 +1,20 @@
-function Hero() {
+import React from 'react';
+
+
+export default function HeroBanner() {
     return (
-        <section class="hero">
-        <img
-          src="assets/hero-banner.jpg"
-          alt="Merge Tactics Battle"
-          class="hero-img"
-        />
-        <div class="hero-content">
-          <h1>Construis ton armée, fusionne tes troupes !</h1>
-          <p>
+      <header class="hero text-center py-5">
+        <div class="container">
+          <img src="/assets/hero.jpg" alt="Merge Tactics banner" className="hero-img" />
+          <h1 class="display-4 fw-bold text-warning">
+            Construis ton armée, fusionne tes troupes !
+          </h1>
+          <p class="lead text-light">
             Découvrez les cartes et leaders du mod <strong>Merge Tactics</strong>
             inspiré de <em>Clash Royale</em>.
           </p>
-          <button class="cta">Explorer les cartes</button>
+          <a href="#" class="btn btn-lg btn-warning mt-3">Explorer les cartes</a>
         </div>
-      </section>
-    )
+      </header>
+    );
 }
