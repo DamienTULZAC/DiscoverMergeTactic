@@ -8,8 +8,8 @@
 ---
 
 `npm start` : lancement simultané des serveurs frontend et backend sur deux ports différents :  
-- Frontend : `http://localhost:7654`  
-- Backend : `http://localhost:3000`
+- Backend : `http://localhost:7654`  
+- Frontend : `http://localhost:3000`
 
 ## ARBORESCENCE
 
