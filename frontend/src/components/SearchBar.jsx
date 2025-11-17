@@ -1,14 +1,12 @@
-import React from 'react';
-
-
-export default function SearchBar({ value, onChange }) {
+export default function SearchBar({ search, setSearch }) {
     return (
-        <input
-            type="text"
-            className="search-bar"
-            placeholder="Rechercher une carte..."
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-        />
+      <input
+        type="text"
+        className="form-control my-3"
+        placeholder="Rechercher une carte..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
     );
-}
+  }
+  
