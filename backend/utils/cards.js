@@ -204,6 +204,6 @@ const cardsTab = {
         critical: 0.15
     },
 };
-    
+
 module.exports = cardsTab;
     
