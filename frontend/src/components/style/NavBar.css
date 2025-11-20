@@ -1,0 +1,57 @@
+/* Wrapper pour centrer la navbar */
+.mt-navbar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Navbar principale */
+  .mt-navbar {
+    width: 70%;
+    height: 70px;
+    background: linear-gradient(135deg, #3b246b, #6a4fb6);
+    border: 3px solid #4bb4ff;
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    position: relative;
+    padding: 0 2rem;
+    z-index: 10;
+  }
+  
+  /* Liens */
+  .mt-nav-link {
+    color: #e9c46a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+  
+  .mt-nav-link:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+  }
+  
+  /* Zone logo */
+  .mt-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -35%; /* dépasse la navbar */
+  }
+  
+  /* Logo */
+  .mt-logo {
+    height: 150px; /* 150% de la navbar */
+    width: 150px;
+    border-radius: 12px;
+    border: 3px solid #4bb4ff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+  }
+  
+  /* Alignement des blocs gauche/droite */
+  .mt-links {
+    display: flex;
+    align-items: center;
+  }
+  

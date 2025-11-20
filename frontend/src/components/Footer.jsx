@@ -1,3 +1,4 @@
+import "./style/Footer.css";
 import React from 'react';
 
 

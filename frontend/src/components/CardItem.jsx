@@ -1,3 +1,6 @@
+import "./style/CardItem.css";
+import React from 'react';
+
 export default function CardItem({ card }) {
     return (
       <div className="card-template">

@@ -1,0 +1,35 @@
+/* ======================================================================================= */
+/* ======================================================================================= */
+/* ===================================== LEADER ========================================== */
+/* ======================================================================================= */
+/* ======================================================================================= */
+
+
+.card-leader {
+    background: var(--blue-dark);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    width: 200px;
+    color: var(--text-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  }
+  .card-leader .leader-img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--gold);
+  }
+  .card-leader .leader-info {
+    padding: 16px;
+  }
+  .card-leader .leader-name {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--gold);
+  }
+  .card-leader .leader-ability {
+    font-weight: bold;
+    margin: 8px 0;
+  }
+  .card-leader .leader-desc {
+    font-size: 0.9rem;
+  }

@@ -1,0 +1,67 @@
+/* ======================================================================================= */
+/* ======================================================================================= */
+/* ===================================== PLAYABLE ======================================== */
+/* ======================================================================================= */
+/* ======================================================================================= */
+
+
+.card-playable {
+    background: var(--gray);
+    border: 2px solid var(--blue);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 180px;
+    color: var(--text-light);
+  }
+  .card-playable .card-img {
+    width: 100%;
+    height: auto;
+  }
+  .card-playable .card-info {
+    padding: 12px;
+  }
+  .card-playable .card-name {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--gold);
+  }
+  .card-playable .card-cost {
+    margin: 8px 0;
+    font-weight: bold;
+  }
+  .card-playable .card-desc {
+    font-size: 0.9rem;
+  }
+  
+  
+  /* ou
+  
+  .card-template {
+    background: linear-gradient(145deg, #2b2250, #1d1835);
+    border: 3px solid #a974ff;
+    border-radius: 16px;
+    padding: 15px;
+    color: white;
+    box-shadow: 0 0 15px rgba(163, 99, 255, 0.5);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .card-template:hover {
+    transform: scale(1.03);
+  }
+  
+  .card-template img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .rarity-common { color: #b5b5b5; }
+  .rarity-rare { color: #4db0ff; }
+  .rarity-epic { color: #c060ff; }
+  .rarity-legendary { color: #ffcc4d; }
+  
+  .filter-container select {
+    margin-right: 10px;
+  } */

@@ -1,25 +1,29 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
+import "./style/NavBar.css";
+import logo from "../assets/logo/logo.png";
 
 export default function Navbar() {
-    //const { pathname } = useLocation();
-    return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
-            <div class="container">
-                <a class="navbar-brand fw-bold text-warning" href="#">DiscoverMergeTactics</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="/">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cards">Cartes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/leaders">Leaders</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">A propos</a></li>
-                </ul>
-                </div>
-            </div>
-        </nav>
-    );
+  return (
+    <div className="mt-navbar-wrapper d-flex justify-content-center">
+      <nav className="mt-navbar d-flex align-items-center justify-content-between">
+
+        {/* Liens gauche */}
+        <div className="d-flex gap-4 mt-links">
+          <a href="/" className="mt-nav-link">Home</a>
+          <a href="/cards" className="mt-nav-link">Cartes</a>
+        </div>
+
+        {/* Logo centre */}
+        <div className="mt-logo-container">
+          <img src={logo} alt="logo" className="mt-logo" />
+        </div>
+
+        {/* Liens droite */}
+        <div className="d-flex gap-4 mt-links">
+          <a href="/leaders" className="mt-nav-link">Leaders</a>
+          <a href="/about" className="mt-nav-link">About</a>
+        </div>
+
+      </nav>
+    </div>
+  );
 }

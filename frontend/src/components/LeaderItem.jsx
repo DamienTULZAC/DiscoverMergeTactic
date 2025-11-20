@@ -1,3 +1,4 @@
+import "./style/LeaderItem.css";
 import React from 'react';
 
 
