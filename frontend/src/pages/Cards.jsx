@@ -23,6 +23,17 @@ export default function Cards() {
       setLoading(false);
     }, 800);
   }, []);
+
+  // Filtrage dynamique
+  useEffect(() => {
+    let filtered = cards.filter(card =>
+      card.name.toLowerCase().includes(search.toLowerCase()) &&
+      (rarity === "" || card.rarity === rarity) &&
+      (type === "" || card.type === type)
+    );
+
+    setFilteredCards(filtered);
+  }, [search, rarity, type, cards]);
   
 
   return (
@@ -30,10 +41,15 @@ export default function Cards() {
       <h1 className="page-title text-light">Cartes</h1>
 
       {/* Barre de recherche */}
-      <SearchBar></SearchBar>
+      <SearchBar search={search} setSearch={setSearch} />
 
       {/* Filtres */}
-      <FilterBar></FilterBar>
+      <FilterBar
+        rarity={rarity}
+        setRarity={setRarity}
+        type={type}
+        setType={setType}
+      />
 
       {/* Loader */}
     {isLoading && <Loader />}
@@ -61,9 +77,9 @@ export default function Cards() {
       )}
 
       {/* Liste des cartes */}
-      <div className="row g-3">
+      <div className="row g-4">
         {!isLoading && filteredCards.map(card => (
-          <div className="col-md-4" key={card.id}>
+          <div className="col-6 col-md-4 col-lg-3" key={card.id}>
             <CardItem card={card} />
           </div>
         ))}

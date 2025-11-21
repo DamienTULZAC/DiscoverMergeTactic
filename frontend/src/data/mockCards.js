@@ -5,7 +5,7 @@ export const cards = [
       type: "distance",
       rarity: "common",
       level: 1,
-      image: "https://via.placeholder.com/128"
+      image: "https://api-assets.clashroyale.com/cards/<card-id>/knight.png"
     },
     {
       id: 2,

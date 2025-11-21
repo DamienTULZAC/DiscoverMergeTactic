@@ -5,63 +5,226 @@
 /* ======================================================================================= */
 
 
-.card-playable {
-    background: var(--gray);
-    border: 2px solid var(--blue);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 180px;
-    color: var(--text-light);
+/* ===== base card ===== */
+.cr-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 18px;
+  overflow: visible; /* halo can overflow */
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* floating animation (subtle bob) */
+@keyframes float-bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+.cr-card {
+  animation: float-bob 6s ease-in-out infinite;
+}
+
+/* inner wrapper */
+.cr-card-inner {
+  width: 96%;
+  height: 96%;
+  border-radius: inherit;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+/* image */
+.cr-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  backface-visibility: hidden;
+}
+
+/* details overlay on hover */
+.cr-card-details {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.7) 100%);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  pointer-events: none;
+}
+.cr-card:hover .cr-card-details {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* halo (glow) element */
+.cr-card-halo {
+  position: absolute;
+  inset: -6%;
+  border-radius: calc(18px + 6%);
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.85;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+/* Hover emphasis */
+.cr-card:hover {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  z-index: 5;
+}
+
+/* ===== rarity border + halo colors ===== */
+
+/* Common (blue-ish) */
+.card-common {
+  border: 5px solid #4aa3ff;
+}
+.card-common .cr-card-halo {
+  box-shadow: 0 0 40px rgba(74,163,255,0.42), inset 0 0 30px rgba(74,163,255,0.14);
+  background: radial-gradient(circle at 50% 20%, rgba(74,163,255,0.25), rgba(74,163,255,0.02));
+}
+
+/* Rare (orange) */
+.card-rare {
+  border: 5px solid #ff9f3f;
+}
+.card-rare .cr-card-halo {
+  box-shadow: 0 0 48px rgba(255,159,63,0.38), inset 0 0 30px rgba(255,159,63,0.10);
+  background: radial-gradient(circle at 50% 20%, rgba(255,159,63,0.28), rgba(255,159,63,0.02));
+}
+
+/* Epic (purple) */
+.card-epic {
+  border: 5px solid #b049ff;
+}
+.card-epic .cr-card-halo {
+  box-shadow: 0 0 52px rgba(176,73,255,0.36), inset 0 0 36px rgba(176,73,255,0.08);
+  background: radial-gradient(circle at 50% 20%, rgba(176,73,255,0.28), rgba(176,73,255,0.02));
+}
+
+/* Legendary (gold, special shape) */
+.card-legendary {
+  border: 6px solid #ffd700;
+  border-radius: 22px;
+}
+.card-legendary .cr-card-halo {
+  box-shadow: 0 0 72px rgba(255,215,0,0.45), inset 0 0 44px rgba(255,215,0,0.10);
+  background: radial-gradient(circle at 50% 20%, rgba(255,215,0,0.30), rgba(255,215,0,0.02));
+}
+
+/* ===== tilt subtle smoothing (when style applied inline) ===== */
+.cr-card-tilt {
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+}
+
+/* ===== Modal styles ===== */
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 18, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.cm-modal {
+  width: min(980px, 96%);
+  background: linear-gradient(180deg,#0b0f1a,#0f1220);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  position: relative;
+  color: #fff;
+}
+
+.cm-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.cm-body {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image dans la modal */
+.cm-image {
+  width: 260px;
+  aspect-ratio: 3/4;
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 6px;
+  position: relative;
+}
+
+.cm-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+/* Informations */
+.cm-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.cm-info h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.cm-desc {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+  .cm-body {
+    flex-direction: column;
   }
-  .card-playable .card-img {
-    width: 100%;
-    height: auto;
+
+  .cm-image {
+    width: 50%;
   }
-  .card-playable .card-info {
-    padding: 12px;
-  }
-  .card-playable .card-name {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--gold);
-  }
-  .card-playable .card-cost {
-    margin: 8px 0;
-    font-weight: bold;
-  }
-  .card-playable .card-desc {
-    font-size: 0.9rem;
-  }
-  
-  
-  /* ou
-  
-  .card-template {
-    background: linear-gradient(145deg, #2b2250, #1d1835);
-    border: 3px solid #a974ff;
-    border-radius: 16px;
-    padding: 15px;
-    color: white;
-    box-shadow: 0 0 15px rgba(163, 99, 255, 0.5);
+
+  .cm-info {
     text-align: center;
-    transition: transform 0.2s ease;
   }
-  
-  .card-template:hover {
-    transform: scale(1.03);
-  }
-  
-  .card-template img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 10px;
-  }
-  
-  .rarity-common { color: #b5b5b5; }
-  .rarity-rare { color: #4db0ff; }
-  .rarity-epic { color: #c060ff; }
-  .rarity-legendary { color: #ffcc4d; }
-  
-  .filter-container select {
-    margin-right: 10px;
-  } */
+}
