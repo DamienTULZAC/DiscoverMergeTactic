@@ -1,21 +1,4 @@
-const categorie = {
-    eng:[
-        "Noble",
-        "Juggernaut",
-        "Ranger",
-        "Clan",
-        "Goblin",
-        "Assassin",
-        "Blaster",
-        "Brawler",
-        "Undead",
-        "Fire",
-        "Mage",
-        "Avanger",
-        "Ace",
-        "Electric"
-    ],
-    fr: [
+const categorie = [
         "Noble",
         "Poids lourd",
         "Rafale",
@@ -30,7 +13,6 @@ const categorie = {
         "Vendette",
         "Ace",
         "Electro"
-    ]
-};
+];
 
 module.exports = categorie;

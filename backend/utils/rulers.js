@@ -43,6 +43,14 @@ const rulerTab = {
     hp: 10,
     releaseDate: "27/10/2025"
 },
+  battleMachine: {
+        name: "Machine de combat",
+        bonus_name: "Maître des bâtiments",
+        bonus_effect: "Donne un bâtiment aléatoire à 1/2/3/4 étoiles au combat aux rounds 1/3/5/8. Taille max de l'équipe -1",
+        description: `Le maitre ouvrier y travaille depuis des années et enfin, son chef-d'oeuvre est prêt au combat ! Tout le monde va enfin découvrir le vrai visage du maitre ouvrier !`,
+      hp: 10,
+      releaseDate: "23/11/2025"
+      }
 };
 
 
