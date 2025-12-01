@@ -6,7 +6,7 @@ export default function HeroBanner() {
     return (
       <header class="hero text-center py-5">
         <div class="container">
-          <img src="/assets/hero.jpg" alt="Merge Tactics banner" className="hero-img" />
+          <img src="../assets/background/banniere.png" alt="Merge Tactics banner" className="hero-img" />
           <h1 class="display-4 fw-bold text-warning">
             Construis ton armée, fusionne tes troupes !
           </h1>
