@@ -10,13 +10,16 @@ export default function CardModal({ card, onClose }) {
 
         <div className="cm-body">
           <div className={`cm-image card-${card.rarity}`}>
-            <img src={card.image} alt={card.name} />
           </div>
 
           <div className="cm-info">
             <h2>{card.name}</h2>
-            <p><strong>Type :</strong> {card.type}</p>
-            <p><strong>Rareté :</strong> {card.rarity}</p>
+            <p><strong>HP :</strong> {card.hp}</p>
+            <p><strong>Dégâts :</strong> {card.damages}</p>
+            <p><strong>Portée :</strong> {card.range}</p>
+            <p><strong>Vitesse :</strong> {card.speed}</p>
+            <p><strong>Vitesse d'attaque :</strong> {card.atqSpeed}</p>
+            <p><strong>Critique :</strong> {card.critical}</p>
             <p className="cm-desc">{card.description || "Aucune description fournie."}</p>
           </div>
         </div>

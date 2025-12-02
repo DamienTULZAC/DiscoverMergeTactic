@@ -45,18 +45,12 @@ export default function CardItem({ card }) {
       >
         <div className="cr-card-inner">
           <div className="cr-card-image">
+            <img href="../assets/img/archerqueen.webp"></img>
           </div>
 
           {/* overlay details visible on hover */}
           <div className="cr-card-details">
             <h4>{card.name}</h4>
-
-            <p><strong>HP :</strong> {card.hp}</p>
-            <p><strong>Dégâts :</strong> {card.damages}</p>
-            <p><strong>Portée :</strong> {card.range}</p>
-            <p><strong>Vitesse :</strong> {card.speed}</p>
-            <p><strong>Vitesse d'attaque :</strong> {card.atqSpeed}</p>
-            <p><strong>Critique :</strong> {card.critical}</p>
           </div>
 
           {/* halo element */}
