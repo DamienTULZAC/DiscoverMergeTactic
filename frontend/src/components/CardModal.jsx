@@ -35,10 +35,7 @@ export default function CardModal({ card, onClose }) {
             <p><strong>Vitesse :</strong> {details.speed}</p>
             <p><strong>Vitesse d'attaque :</strong> {details.atqSpeed}</p>
             <p><strong>Critique :</strong> {details.critical}</p>
-            <div className="cm-cat-div">
-              <p className="cm-cat">{details.categories[0]}</p>
-              <p className="cm-cat">{details.categories[1]}</p>
-            </div>
+            <p><strong>Cat :</strong> {details.categories[0]}</p>
           </div>
         </div>
       </div>
