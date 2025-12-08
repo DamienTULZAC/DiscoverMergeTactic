@@ -46,10 +46,11 @@ export default function Cards() {
       result = result.filter(c => (c.name ?? "").toLowerCase().includes(q));
     }
     if (rarity) {
-      result = result.filter(c => (c.rarity ?? "").toLowerCase() === rarity.toLowerCase());
+      result = result.filter(c => (c.type ?? "").toLowerCase() === rarity.toLowerCase());
     }
     if (type) {
-      result = result.filter(c => (c.type ?? "").toLowerCase() === type.toLowerCase());
+      result = result.filter(c => ( ((c.raw.categories[0]  ?? "").toLowerCase() === type.toLowerCase()) || ((c.raw.categories[1]  ?? "").toLowerCase() === type.toLowerCase())) );
+      console.log(result);
     }
 
     setFilteredCards(result);

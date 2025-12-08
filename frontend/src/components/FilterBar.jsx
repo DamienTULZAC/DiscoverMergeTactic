@@ -8,10 +8,10 @@ export default function FilterBar({ rarity, setRarity, type, setType }) {
         onChange={(e) => setRarity(e.target.value)}
       >
         <option value="">Rareté (toutes)</option>
-        <option value="common">Commune</option>
+        <option value="commun">Commune</option>
         <option value="rare">Rare</option>
-        <option value="epic">Épique</option>
-        <option value="legendary">Légendaire</option>
+        <option value="epique">Épique</option>
+        <option value="legendaire">Légendaire</option>
       </select>
 
       <select
@@ -20,9 +20,20 @@ export default function FilterBar({ rarity, setRarity, type, setType }) {
         onChange={(e) => setType(e.target.value)}
       >
         <option value="">Type (tous)</option>
-        <option value="melee">Mêlée</option>
-        <option value="distance">Distance</option>
-        <option value="magic">Magique</option>
+        <option value="noble">Noble</option>
+        <option value="poids lourd">Poids lourd</option>
+        <option value="rafale">Rafale</option>
+        <option value="clan">Clan</option>
+        <option value="goblin">Goblin</option>
+        <option value="assassin">Assassin</option>
+        <option value="visée">Visée</option>
+        <option value="bagarre">Bagarre</option>
+        <option value="nécromancie">Nécromancie</option>
+        <option value="feu">Feu</option>
+        <option value="arcane">Arcane</option>
+        <option value="vendette">Vendette</option>
+        <option value="ace">Ace</option>
+        <option value="electro">Electro</option>
       </select>
 
     </div>
