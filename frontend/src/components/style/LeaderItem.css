@@ -4,32 +4,88 @@
 /* ======================================================================================= */
 /* ======================================================================================= */
 
+/* ===== base leader card ===== */
+.cr-leader {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 18px;
+  overflow: visible;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  animation: float-bob 6s ease-in-out infinite;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
 
-.card-leader {
-    background: var(--blue-dark);
-    border: 2px solid var(--gold);
-    border-radius: 12px;
-    width: 200px;
-    color: var(--text-light);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  }
-  .card-leader .leader-img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid var(--gold);
-  }
-  .card-leader .leader-info {
-    padding: 16px;
-  }
-  .card-leader .leader-name {
-    margin: 0;
-    font-size: 1.3rem;
-    color: var(--gold);
-  }
-  .card-leader .leader-ability {
-    font-weight: bold;
-    margin: 8px 0;
-  }
-  .card-leader .leader-desc {
-    font-size: 0.9rem;
-  }
+.cr-leader-inner {
+  width: 96%;
+  height: 96%;
+  border-radius: inherit;
+  overflow: hidden;
+  position: relative;
+}
+
+.cr-leader-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cr-leader-details {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 16px;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.7));
+  opacity: 0;
+  transition: 0.3s;
+  color: white;
+}
+
+.cr-leader:hover .cr-leader-details {
+  opacity: 1;
+}
+
+.cr-leader-halo {
+  position: absolute;
+  inset: -6%;
+  border-radius: 22px;
+  filter: blur(12px);
+  z-index: -1;
+}
+
+/* Rareties */
+.leader-common {
+  border: 5px solid #4aa3ff;
+}
+.leader-common .cr-leader-halo {
+  box-shadow: 0 0 40px rgba(74,163,255,0.4);
+}
+
+.leader-rare {
+  border: 5px solid #ff9f3f;
+}
+.leader-rare .cr-leader-halo {
+  box-shadow: 0 0 40px rgba(255,159,63,0.4);
+}
+
+.leader-epic {
+  border: 5px solid #b049ff;
+}
+.leader-epic .cr-leader-halo {
+  box-shadow: 0 0 40px rgba(176,73,255,0.4);
+}
+
+.leader-legendary {
+  border: 6px solid gold;
+}
+.leader-legendary .cr-leader-halo {
+  box-shadow: 0 0 60px rgba(255,215,0,0.45);
+}
+
+/* Tilt transition */
+.cr-leader-tilt {
+  transition: transform 0.15s ease-out;
+}

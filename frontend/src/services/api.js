@@ -1,7 +1,6 @@
 // src/services/api.js
 const API_BASE = "http://localhost:7654";
 
-
 export async function fetchCardsFromApi() {
   const url = `${API_BASE}/api/cards`;
   const res = await fetch(url);
@@ -74,3 +73,44 @@ function normalizeCard(item, fallbackId) {
     raw: item
   };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export async function fetchLeadersFromApi() {
+  const url = `${API_BASE}/api/rulers`;
+  const res = await fetch(url);
+
+  if (!res.ok) throw new Error("Leaders API error");
+
+  const data = await res.json();
+
+  return Object.entries(data).map(([key, obj]) => ({
+    id: key,
+    name: obj.name,
+    bonus_name: obj.bonus_name,
+    bonus_effect: obj.bonus_effect,
+    description: obj.description,
+    hp: obj.hp,
+    rarity: obj.rarity || "common",
+    releaseDate: obj.releaseDate,
+    image: obj.image || `/assets/leaders/${key}.png`
+  }));
+}
+

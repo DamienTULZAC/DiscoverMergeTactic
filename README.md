@@ -17,23 +17,35 @@
 DiscoverMergeTactic/
 ├─ frontend/
 │ ├─ public/
+│ │ ├─ assets/
+│ │ │ ├─ background
+│ │ │ │ ├─ banniere.png
+│ │ │ │ └─ ...
+│ │ │ ├─ img
+│ │ │ │ ├─ archer.png
+│ │ │ │ ├─ archerqueen.png
+│ │ │ │ └─ ...
+│ │ │ └─ logo
+│ │ │   ├─ logo.png
+│ │ │   └─ ...
 │ │ ├─ index.html
 │ │ └─ ...
 │ ├─ src/
 │ │ ├─ components/
+│ │ │ ├─ style
+│ │ │ │ ├─ NavBar.css
+│ │ │ │ ├─ CardItem.css
+│ │ │ │ └─ ...
 │ │ │ ├─ NavBar.jsx
 │ │ │ ├─ CardItem.jsx
-│ │ │ └─ LeaderItem.jsx
+│ │ │ └─ ...
 │ │ ├─ pages/
 │ │ │ ├─ Home.jsx
 │ │ │ ├─ Cards.jsx
 │ │ │ ├─ Leaders.jsx
 │ │ │ └─ About.jsx
 │ │ ├─ services/
-│ │ │ ├─ service1.jsx
-│ │ │ └─ ...
-│ │ ├─ assets/
-│ │ │ ├─ asset1.jsx
+│ │ │ ├─ api.js
 │ │ │ └─ ...
 │ │ ├─ App.js
 │ │ ├─ App.css
