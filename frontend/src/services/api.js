@@ -9,19 +9,17 @@ export async function fetchCardsFromApi() {
     throw new Error(`API error ${res.status}: ${text}`);
   }
   const data = await res.json();
-  console.log("getAll : ", data);
   return data.map((item, idx) => normalizeCard(item, idx));
 }
 
-export function fetchOneCardFromApi(id) {
+export async function fetchOneCardFromApi(id) {
   const url = `${API_BASE}/api/cards/`+id;
-  const res = fetch(url);
+  const res = await fetch(url);
   if (!res.ok) {
-    const text = res.text();
+    const text = await res.text();
     throw new Error(`API error ${res.status}: ${text}`);
   }
-  console.log("res : ", res);
-  const data = res.json();
+  const data = await res.json();
   return data;
 }
 
