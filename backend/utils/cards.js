@@ -322,7 +322,7 @@ const cardsTab = [
         type: "epique",
         img: ".png",
         cout: 4,
-        categories: [8,7],
+        categories: [4,1],
     },
     // 5 costs --------------------------
     {

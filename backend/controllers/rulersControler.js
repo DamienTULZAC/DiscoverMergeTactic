@@ -6,6 +6,7 @@ const rulerTab = require('../utils/rulers');
 exports.getAllRulers = (req, res) => {
     res.json(rulerTab.map((ruler)=>{
         return {
+            id: ruler.id,
             name: ruler.name,
             img: ruler.img
         };
