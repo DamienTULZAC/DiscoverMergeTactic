@@ -1,8 +1,12 @@
 import React from "react";
+import { fetchOneCardFromApi } from "../services/api";
 import "./style/CardItem.css"; // réutilise les mêmes styles
 
 export default function CardModal({ card, onClose }) {
   // simple modal overlay
+  
+  const data = fetchOneCardFromApi(card.id);
+  console.log("getOne : ",data);
   return (
     <div className="cm-overlay" onClick={onClose} role="dialog" aria-modal="true">
       <div className="cm-modal" onClick={(e) => e.stopPropagation()}>

@@ -56,7 +56,9 @@ export default function Cards() {
   }, [search, rarity, type, cards]);
 
   return (
-    <div className="page-container">
+    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+
+    <div className="page-container" style={{width:'80%'}}>
       <h1 className="page-title text-light">Cartes</h1>
 
       {error && <div className="alert alert-danger">{error}</div>}
@@ -91,6 +93,8 @@ export default function Cards() {
           </div>
         </>
       )}
+    </div>
+      
     </div>
   );
 }

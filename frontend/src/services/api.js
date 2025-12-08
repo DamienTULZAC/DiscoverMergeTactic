@@ -9,42 +9,25 @@ export async function fetchCardsFromApi() {
     throw new Error(`API error ${res.status}: ${text}`);
   }
   const data = await res.json();
-
-  // data peut être :
-  // 1) un tableau : [ {...}, {...} ]
-  // 2) un objet mapping : { knight: {..}, archer: {..} }
-  // 3) { cards: [...] } ou { cardsTab: { ... } }
-  let mapping = null;
-  if (Array.isArray(data)) {
-    // déjà un tableau -> renvoyer tel quel (normaliser id/name)
-    return data.map((item, idx) => normalizeCard(item, idx));
-  }
-
-  // si enveloppé
-  if (data.cards && Array.isArray(data.cards)) {
-    return data.cards.map((item, idx) => normalizeCard(item, idx));
-  }
-  if (data.cardsTab && typeof data.cardsTab === "object") {
-    mapping = data.cardsTab;
-  }
-
-  // si data est directement un objet mapping
-  if (!mapping && typeof data === "object" && !Array.isArray(data)) {
-    // si toutes les valeurs sont des objets et les clés ne sont pas des index => mapping
-    const valuesAreObjects = Object.values(data).every(v => typeof v === "object");
-    if (valuesAreObjects) mapping = data;
-  }
-
-  if (mapping) {
-    return Object.entries(mapping).map(([key, obj]) => {
-      // ajouter id / name à partir de la clé si besoin
-      return normalizeCard({ id: key, name: humanizeKey(key), ...obj });
-    });
-  }
-
-  // défaut : renvoyer vide
-  return [];
+  console.log("getAll : ", data);
+  return data.map((item, idx) => normalizeCard(item, idx));
 }
+
+export function fetchOneCardFromApi(id) {
+  const url = `${API_BASE}/api/cards/`+id;
+  const res = fetch(url);
+  if (!res.ok) {
+    const text = res.text();
+    throw new Error(`API error ${res.status}: ${text}`);
+  }
+  console.log("res : ", res);
+  const data = res.json();
+  return data;
+}
+
+
+
+
 
 /** utilitaires de normalisation */
 function humanizeKey(key) {

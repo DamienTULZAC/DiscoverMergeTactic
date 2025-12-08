@@ -1,6 +1,7 @@
 /* Wrapper pour centrer la navbar */
 .mt-navbar-wrapper {
     width: 100%;
+    height: 130px;
     display: flex;
     justify-content: center;
   }
@@ -37,7 +38,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -35%; /* dépasse la navbar */
+    top: -20%; /* dépasse la navbar */
   }
   
   /* Logo */

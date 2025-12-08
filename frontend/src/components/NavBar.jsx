@@ -1,5 +1,4 @@
 import "./style/NavBar.css";
-import logo from "../assets/logo/logo.png";
 
 export default function Navbar() {
   return (
@@ -14,7 +13,7 @@ export default function Navbar() {
 
         {/* Logo centre */}
         <div className="mt-logo-container">
-          <img src={logo} alt="logo" className="mt-logo" />
+          <img src="/assets/logo/logo.png" alt="logo" className="mt-logo" />
         </div>
 
         {/* Liens droite */}

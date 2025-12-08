@@ -9,7 +9,7 @@
 .cr-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/5;
   border-radius: 18px;
   overflow: visible; /* halo can overflow */
   cursor: pointer;
@@ -20,16 +20,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* floating animation (subtle bob) */
-@keyframes float-bob {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-.cr-card {
-  animation: float-bob 6s ease-in-out infinite;
 }
 
 /* inner wrapper */
