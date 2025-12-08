@@ -15,19 +15,19 @@ exports.getAllCards =
                 type: obj.type,
                 cout: obj.cout,
                 img: obj.img,
-                categories: [catTab[obj.categories[0]], catTab[obj.categories[1]]],
+                categories: [catTab[obj.categories[0]].name, catTab[obj.categories[1]].name],
             };
         }));
     };
 
-exports.getCardsById = 
+exports.getCardById = 
     (req, res) =>{
         let obj;
-        if(req.params.id >= 0 || req.params.id < cardsTab.length){
+        if(req.params.id > 0 || req.params.id <= cardsTab.length){
             for(let i=0; i<cardsTab.length; i++){
                 obj = cardsTab[i];
                 if(req.params.id == obj.id) {
-                    obj.categories = [catTab[obj.categories[0]], catTab[obj.categories[1]]],
+                    obj.categories = [catTab[obj.categories[0]].name, catTab[obj.categories[1]].name],
                     res.json(obj);
                 }
             }
