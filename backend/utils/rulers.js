@@ -1,6 +1,6 @@
 
-const rulerTab = {
-  king: {
+const rulerTab = [
+  {
       name: "Roi Royal",
       bonus_name: "Commission royale",
       bonus_effect: "Perdre vous donne +4 Élixirs",
@@ -11,7 +11,7 @@ const rulerTab = {
     hp: 12,
     releaseDate: "30/06/2025"
   },
-  empress: {
+  {
     
         name: "Impératrice spirituelle",
         bonus_name: "Fusion calculée",
@@ -22,7 +22,7 @@ const rulerTab = {
     hp: 10,
     releaseDate: "30/06/2025"
 },
-  queen: {
+  {
     
         name: "Reine gobeline",
         bonus_name: "Vert de jalousie",
@@ -35,7 +35,7 @@ const rulerTab = {
     hp: 10,
     releaseDate: "29/09/2025"
 },
-  dragon: {
+  {
         name: "Vouivre dorée",
         bonus_name: "Fontaine éternelle",
         bonus_effect: "Gagnez +1 Elixir et +1 taille d'équipe par tour",
@@ -43,7 +43,7 @@ const rulerTab = {
     hp: 10,
     releaseDate: "27/10/2025"
 },
-};
+];
 
 
 module.exports = rulerTab;
