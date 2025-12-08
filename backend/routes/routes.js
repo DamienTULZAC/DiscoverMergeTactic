@@ -9,9 +9,4 @@ const cardsRouter = require('./cardsRoutes');
 router.use('/rulers', rulersRouter);
 router.use('/cards', cardsRouter);
 
-// Route par défaut (optionnelle)
-router.get('/', (req, res) => {
-  res.send('Bienvenue sur l’API de Merge Tactics 👑');
-});
-
 module.exports = router;
