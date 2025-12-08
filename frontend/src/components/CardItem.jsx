@@ -35,7 +35,7 @@ export default function CardItem({ card }) {
     <>
       <div
         ref={cardRef}
-        className={`cr-card card-${card.rarity} cr-card-tilt`}
+        className={`cr-card card-${card.type} cr-card-tilt`}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => setIsModalOpen(true)}

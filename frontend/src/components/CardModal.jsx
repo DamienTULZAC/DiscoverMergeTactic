@@ -24,7 +24,7 @@ export default function CardModal({ card, onClose }) {
         <button className="cm-close btn-close" onClick={onClose} aria-label="Close"></button>
 
         <div className="cm-body">
-          <div className={`cm-image card-${card.rarity}`}>
+          <div className={`cm-image card-${details.type}`}>
           </div>
 
           <div className="cm-info">
@@ -35,7 +35,7 @@ export default function CardModal({ card, onClose }) {
             <p><strong>Vitesse :</strong> {details.speed}</p>
             <p><strong>Vitesse d'attaque :</strong> {details.atqSpeed}</p>
             <p><strong>Critique :</strong> {details.critical}</p>
-            <p><strong>Cat :</strong> {details.categories[0]}</p>
+            <p><strong>Catégories :</strong> {details.categories[0]}, {details.categories[1]}</p>
           </div>
         </div>
       </div>

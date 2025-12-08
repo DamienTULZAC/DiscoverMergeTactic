@@ -84,10 +84,10 @@
 /* ===== rarity border + halo colors ===== */
 
 /* Common (blue-ish) */
-.card-common {
+.card-commun {
   border: 5px solid #4aa3ff;
 }
-.card-common .cr-card-halo {
+.card-commun .cr-card-halo {
   box-shadow: 0 0 40px rgba(74,163,255,0.42), inset 0 0 30px rgba(74,163,255,0.14);
   background: radial-gradient(circle at 50% 20%, rgba(74,163,255,0.25), rgba(74,163,255,0.02));
 }
@@ -102,20 +102,20 @@
 }
 
 /* Epic (purple) */
-.card-epic {
+.card-epique {
   border: 5px solid #b049ff;
 }
-.card-epic .cr-card-halo {
+.card-epique .cr-card-halo {
   box-shadow: 0 0 52px rgba(176,73,255,0.36), inset 0 0 36px rgba(176,73,255,0.08);
   background: radial-gradient(circle at 50% 20%, rgba(176,73,255,0.28), rgba(176,73,255,0.02));
 }
 
 /* Legendary (gold, special shape) */
-.card-legendary {
+.card-legendaire {
   border: 6px solid #ffd700;
   border-radius: 22px;
 }
-.card-legendary .cr-card-halo {
+.card-legendaire .cr-card-halo {
   box-shadow: 0 0 72px rgba(255,215,0,0.45), inset 0 0 44px rgba(255,215,0,0.10);
   background: radial-gradient(circle at 50% 20%, rgba(255,215,0,0.30), rgba(255,215,0,0.02));
 }
