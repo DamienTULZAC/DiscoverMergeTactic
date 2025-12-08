@@ -25,8 +25,20 @@ exports.getCardById =
             for(let i=0; i<cardsTab.length; i++){
                 obj = cardsTab[i];
                 if(req.params.id == obj.id) {
-                    obj.categories = [catTab[obj.categories[0]], catTab[obj.categories[1]]],
-                    res.json(obj);
+                    res.json({
+                        id: obj.id,
+                        name: obj.name,
+                        hp: obj.hp,
+                        damages: obj.damages,
+                        range: obj.range,
+                        speed: obj.speed,
+                        atqSpeed: obj.atqSpeed,
+                        critical: obj.critical,
+                        type: obj.type,
+                        img: obj.img,
+                        cout: obj.cout,
+                        categories: [catTab[obj.categories[0]], catTab[obj.categories[1]]]
+                    });
                 }
             }
         } else{
