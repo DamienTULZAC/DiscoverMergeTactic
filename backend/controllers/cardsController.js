@@ -7,8 +7,6 @@ const catTab = require('../utils/categories');
 exports.getAllCards =
     (req, res) => {
         res.json(cardsTab.map((obj) => {
-            //console.log(obj.categories[0]);
-            //obj.categories = [catTab[obj.categories[0]], catTab[obj.categories[1]]];
             return {
                 id: obj.id,
                 name: obj.name,
