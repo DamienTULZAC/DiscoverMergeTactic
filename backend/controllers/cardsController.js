@@ -13,7 +13,7 @@ exports.getAllCards =
                 type: obj.type,
                 cout: obj.cout,
                 img: obj.img,
-                categories: [catTab[obj.categories[0]].name, catTab[obj.categories[1]].name],
+                categories: [catTab[obj.categories[0]], catTab[obj.categories[1]]],
             };
         }));
     };
@@ -25,7 +25,7 @@ exports.getCardById =
             for(let i=0; i<cardsTab.length; i++){
                 obj = cardsTab[i];
                 if(req.params.id == obj.id) {
-                    obj.categories = [catTab[obj.categories[0]].name, catTab[obj.categories[1]].name],
+                    obj.categories = [catTab[obj.categories[0]], catTab[obj.categories[1]]],
                     res.json(obj);
                 }
             }
