@@ -83,7 +83,7 @@ export async function fetchLeadersFromApi() {
   const data = await res.json();
 
   return Object.entries(data).map(([key, obj]) => ({
-    id: key,
+    id: obj.id,
     name: obj.name,
     bonus_name: obj.bonus_name,
     bonus_effect: obj.bonus_effect,
