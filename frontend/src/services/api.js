@@ -50,7 +50,7 @@ function normalizeCard(item, fallbackId) {
     rarity: item.rarity ?? item.r ?? "common",
     level: item.level ?? 1,
     description: item.description ?? "",
-    image: item.image ?? `/assets/cards/${id}.png`, // convention possible
+    img: item.img ?? `/assets/cards/${id}.png`, // convention possible
     raw: item
   };
 }
@@ -91,7 +91,7 @@ export async function fetchLeadersFromApi() {
     hp: obj.hp,
     rarity: obj.rarity || "common",
     releaseDate: obj.releaseDate,
-    image: obj.image || `/assets/leaders/${key}.png`
+    img: obj.img || `/assets/leaders/${key}.png`
   }));
 }
 

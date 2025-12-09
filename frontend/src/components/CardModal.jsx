@@ -25,6 +25,7 @@ export default function CardModal({ card, onClose }) {
 
         <div className="cm-body">
           <div className={`cm-image card-${details.type}`}>
+            <img src={"assets/img/"+details.img} alt={details.name} />
           </div>
 
           <div className="cm-info">

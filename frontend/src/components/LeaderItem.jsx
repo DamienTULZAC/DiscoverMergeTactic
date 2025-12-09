@@ -44,7 +44,7 @@ export default function LeaderItem({ leader }) {
       >
         <div className="cr-leader-inner">
           <div className="cr-leader-image">
-            <img src={leader.image} alt={leader.name} />
+            <img src={"/assets/img/"+leader.img} alt={leader.name} />
           </div>
 
           <div className="cr-leader-details">

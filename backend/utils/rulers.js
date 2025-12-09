@@ -11,7 +11,7 @@ const rulerTab = [
         Et la folie de Merge Tactics sera bientôt sa plus belle prouesse !`,
     hp: 12,
     releaseDate: "30/06/2025",
-    img: ".png"
+    img: "royaleking_mt.png"
   },
   {
         id: 2,
@@ -23,7 +23,7 @@ const rulerTab = [
         Cette petite rebelle est très intelligente et se bat pour découvrir la vraie nature de ses pouvoirs.`,
     hp: 10,
     releaseDate: "30/06/2025",
-    img: ".png"
+    img: "spiritempress_mt.png"
 },
   {
         id: 3,
@@ -37,7 +37,7 @@ const rulerTab = [
         Seuls ses bébés gobelins pourraient calmer sa colère, mais ils ne sont nulle part...`,
     hp: 10,
     releaseDate: "29/09/2025",
-    img: ".png"
+    img: "goblinqueen_mt.png"
 },
   {
         id: 4,
@@ -47,7 +47,7 @@ const rulerTab = [
         description: `Tout juste sortie de la rivière d'élixir doré, ce dragon et sa prestance confèrent honneur à ceux qui se battent à ses côtés.`,
     hp: 10,
     releaseDate: "27/10/2025",
-    img: ".png"
+    img: "battlemachine_mt.png"
 },
 ];
 

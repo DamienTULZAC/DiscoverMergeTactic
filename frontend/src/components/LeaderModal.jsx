@@ -24,7 +24,7 @@ export default function LeaderModal({ leader, onClose }) {
 
         <div className="cm-body">
           <div className={`cm-image leader-${leader.rarity || "common"}`}>
-            <img src={details.image} alt={details.name} />
+            <img src={"assets/img/"+details.img} alt={details.name} />
           </div>
 
           <div className="cm-info">

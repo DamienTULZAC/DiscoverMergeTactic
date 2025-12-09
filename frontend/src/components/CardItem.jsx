@@ -45,7 +45,7 @@ export default function CardItem({ card }) {
       >
         <div className="cr-card-inner">
           <div className="cr-card-image">
-            <img src={"/assets/img/archerqueen.webp"} alt={card.name} />
+            <img src={"/assets/img/"+card.img} alt={card.name} />
           </div>
 
           {/* overlay details visible on hover */}
