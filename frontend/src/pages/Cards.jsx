@@ -111,10 +111,11 @@ export default function Cards() {
             <div className="row g-4">
               {filteredCards.map(card => (
                 <div className="col-6 col-md-4 col-lg-2" key={card.id}>
-                  <CardItem card={card} />
+                    <CardItem card={card} />
                 </div>
               ))}
             </div>
+
           </>
         )}
         </div>

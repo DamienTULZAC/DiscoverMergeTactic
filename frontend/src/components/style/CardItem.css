@@ -86,7 +86,7 @@
 /* Common (blue-ish) */
 .card-commun {
   border-radius: 15px;
-  border: 5px solid transparent;
+  border: 4px solid transparent;
   background:
     radial-gradient(circle, white 60%, transparent 61%) padding-box,
     conic-gradient(#4aa3ff) border-box;
@@ -95,7 +95,7 @@
 /* Rare (orange) */
 .card-rare {
   border-radius: 15px;
-  border: 5px solid transparent;
+  border: 4px solid transparent;
   background:
     radial-gradient(circle, white 60%, transparent 61%) padding-box,
     conic-gradient(darkorange) border-box;
@@ -104,7 +104,7 @@
 /* Epic (purple) */
 .card-epique {
   border-radius: 15px;
-  border: 5px solid transparent;
+  border: 4px solid transparent;
   background:
     radial-gradient(circle, white 60%, transparent 61%) padding-box,
     conic-gradient(#b049ff) border-box;
@@ -113,7 +113,7 @@
 /* Legendary */
 .card-legendaire {
   border-radius: 15px;
-  border: 5px solid transparent;
+  border: 4px solid transparent;
   background:
     radial-gradient(circle, white 60%, transparent 61%) padding-box,
     conic-gradient(red, orange, yellow, green, cyan, blue, purple, red) border-box;
@@ -139,7 +139,7 @@
 }
 
 .cm-modal {
-  width: min(980px, 96%);
+  width: min(600px, 96%);
   background: linear-gradient(180deg,#0b0f1a,#0f1220);
   border-radius: 16px;
   padding: 18px;
@@ -170,8 +170,8 @@
 
 /* Image dans la modal */
 .cm-image {
-  width: 260px;
-  aspect-ratio: 3/4;
+  width: 300px;
+  aspect-ratio: 10/12;
   border-radius: 18px;
   overflow: hidden;
   padding: 6px;
@@ -208,92 +208,82 @@
 /* Modal responsive */
 @media (max-width: 768px) {
   .cm-body {
+    display: flex;
     flex-direction: column;
   }
-
   .cm-image {
-    width: 50%;
+    width: 100%;
   }
-
   .cm-info {
     text-align: center;
   }
 }
 
-
-/*
- * TEST ANIMATION :
- */
-
- /* Overlay noir transparent */
-.selected-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(3px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 5000;
-}
-
-/* Container global */
-.selected-card-container {
-  display: flex;
-  gap: 20px;
-  transform: translateY(40px);
-  animation: popupAppear 0.4s ease forwards;
-}
-
-/* Animation de montée de la carte */
-.selected-card-animate {
-  width: 250px;
-  border-radius: 10px;
-  transform: scale(0.6) translateY(80px);
-  animation: cardRise 0.5s ease forwards;
-}
-
-@keyframes cardRise {
-  0% {
-    transform: scale(0.6) translateY(80px);
-  }
-  100% {
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* Panel de description (slide vers la droite) */
-.selected-card-description {
-  width: 300px;
-  max-height: 380px;
+/* Container global en mode grille 2 colonnes */
+.cr-stats-container {
+  background: linear-gradient(135deg, #4b2c82, #6f47c9);
   padding: 20px;
-  background: #ffffffdd;
-  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  border: 4px solid #e2b13c;
+  box-shadow:
+    0 0 15px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(255,255,255,0.2);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 14px;
+
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  font-family: "Supercell-Magic", sans-serif;
+}
+
+/* Style standard d'une stat */
+.cr-stat {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 12px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-
-  transform: translateX(40px);
-  opacity: 0;
-  animation: slideIn 0.4s ease forwards 0.15s;
+  border: 2px solid #dca33a;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* La dernière stat occupe la largeur des deux colonnes */
+.cr-stat-full {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 2px solid #dca33a;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+  grid-column: span 2;
 }
 
-/* Animation du container entier */
-@keyframes popupAppear {
-  from {
-    transform: translateY(40px);
-  }
-  to {
-    transform: translateY(0);
-  }
+/* Label */
+.cr-label {
+  color: #ffd86b;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  margin-left: 8px;
+  flex: 1;
+}
+
+/* Valeur */
+.cr-value {
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Icône standard */
+.cr-icon {
+  width: 26px;
+  height: 26px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
