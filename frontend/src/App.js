@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from "./components/NavBar";
+import Banniere from "./components/Banniere";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
 import Leaders from "./pages/Leaders";
@@ -12,15 +13,18 @@ import { Routes, Route, Link } from 'react-router-dom';
 export default function App() {
   return (
     <div>
-      <NavBar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cards" element={<Cards />} />
-          <Route path="/leaders" element={<Leaders />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </main>
+      <div>
+        <NavBar />
+        <Banniere />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cards" element={<Cards />} />
+            <Route path="/leaders" element={<Leaders />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+      </div>
       <Footer />
     </div>
   );
