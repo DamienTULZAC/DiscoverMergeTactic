@@ -27,6 +27,17 @@ DiscoverMergeTactic/
 │ │ └─ ...
 │ └─ package.json
 ├─ backend/
+│ ├─ controllers/
+│ │ ├─ cardsController.js
+│ │ └─ rulersController.js
+│ ├─ routes/
+│ │ ├─ routes.js
+│ │ ├─ cardsRoutes.js
+│ │ └─ rulersRoutes.js
+│ ├─ utils/
+│ │ ├─ cards.js
+│ │ ├─ categories.js
+│ │ └─ rulers.js
 │ ├─ server.js
 │ └─ package.json
 ├─ package.json
