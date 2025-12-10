@@ -1,0 +1,60 @@
+/* ======================================================================================= */
+/* ======================================================================================= */
+/* ===================================== LEADER ========================================== */
+/* ======================================================================================= */
+/* ======================================================================================= */
+
+/* ===== base leader card ===== */
+.cr-leader {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 18px;
+  overflow: visible;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  animation: float-bob 6s ease-in-out infinite;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.cr-leader-inner {
+  border-radius: inherit;
+  overflow: hidden;
+  position: relative;
+}
+
+.cr-leader-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cr-leader-details {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 16px;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.7));
+  opacity: 0;
+  transition: 0.3s;
+  color: white;
+}
+
+.cr-leader:hover .cr-leader-details {
+  opacity: 1;
+}
+
+.cr-leader-halo {
+  position: absolute;
+  inset: -6%;
+  border-radius: 22px;
+  filter: blur(12px);
+  z-index: -1;
+}
+
+/* Tilt transition */
+.cr-leader-tilt {
+  transition: transform 0.15s ease-out;
+}

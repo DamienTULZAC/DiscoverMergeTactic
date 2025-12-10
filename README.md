@@ -8,8 +8,8 @@
 ---
 
 `npm start` : lancement simultané des serveurs frontend et backend sur deux ports différents :  
-- Backend : `http://localhost:7654`  
-- Frontend : `http://localhost:3000`
+- Frontend : `http://localhost:7654`  
+- Backend : `http://localhost:3000`
 
 ## ARBORESCENCE
 
@@ -17,14 +17,41 @@
 DiscoverMergeTactic/
 ├─ frontend/
 │ ├─ public/
+│ │ ├─ assets/
+│ │ │ ├─ background
+│ │ │ │ ├─ banniere.png
+│ │ │ │ └─ ...
+│ │ │ ├─ img
+│ │ │ │ ├─ archer.png
+│ │ │ │ ├─ archerqueen.png
+│ │ │ │ └─ ...
+│ │ │ └─ logo
+│ │ │   ├─ logo.png
+│ │ │   └─ ...
 │ │ ├─ index.html
 │ │ └─ ...
 │ ├─ src/
+│ │ ├─ components/
+│ │ │ ├─ style
+│ │ │ │ ├─ NavBar.css
+│ │ │ │ ├─ CardItem.css
+│ │ │ │ └─ ...
+│ │ │ ├─ NavBar.jsx
+│ │ │ ├─ CardItem.jsx
+│ │ │ └─ ...
+│ │ ├─ pages/
+│ │ │ ├─ Home.jsx
+│ │ │ ├─ Cards.jsx
+│ │ │ ├─ Leaders.jsx
+│ │ │ └─ About.jsx
+│ │ ├─ services/
+│ │ │ ├─ api.js
+│ │ │ └─ ...
 │ │ ├─ App.js
 │ │ ├─ App.css
+│ │ ├─ index.js
 │ │ ├─ index.css
-│ │ ├─ App.test.js
-│ │ └─ ...
+│ │ └─ App.test.js
 │ └─ package.json
 ├─ backend/
 │ ├─ controllers/
@@ -43,3 +70,12 @@ DiscoverMergeTactic/
 ├─ package.json
 └─ .gitignore
 ```
+
+
+## AJOUT
+
+### Front End
+
+- **npm install react-router-dom**
+└─ Permet de gérer la navigation entre plusieurs pages dans ton app React, sans recharger le site à chaque fois (= SPA).
+<br >
