@@ -15,7 +15,6 @@ export default function App() {
     <div>
       <div>
         <NavBar />
-        <Banniere />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

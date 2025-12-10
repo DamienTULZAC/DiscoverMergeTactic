@@ -9,7 +9,7 @@
 .cr-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 10/12;
   border-radius: 18px;
   overflow: visible; /* halo can overflow */
   cursor: pointer;
@@ -24,8 +24,8 @@
 
 /* inner wrapper */
 .cr-card-inner {
-  width: 96%;
-  height: 96%;
+  width: 100%;
+  height: 100%;
   border-radius: inherit;
   overflow: hidden;
   position: relative;
@@ -85,40 +85,41 @@
 
 /* Common (blue-ish) */
 .card-commun {
-  border: 5px solid #4aa3ff;
-}
-.card-commun .cr-card-halo {
-  box-shadow: 0 0 40px rgba(74,163,255,0.42), inset 0 0 30px rgba(74,163,255,0.14);
-  background: radial-gradient(circle at 50% 20%, rgba(74,163,255,0.25), rgba(74,163,255,0.02));
+  border-radius: 15px;
+  border: 5px solid transparent;
+  background:
+    radial-gradient(circle, white 60%, transparent 61%) padding-box,
+    conic-gradient(#4aa3ff) border-box;
 }
 
 /* Rare (orange) */
 .card-rare {
-  border: 5px solid #ff9f3f;
-}
-.card-rare .cr-card-halo {
-  box-shadow: 0 0 48px rgba(255,159,63,0.38), inset 0 0 30px rgba(255,159,63,0.10);
-  background: radial-gradient(circle at 50% 20%, rgba(255,159,63,0.28), rgba(255,159,63,0.02));
+  border-radius: 15px;
+  border: 5px solid transparent;
+  background:
+    radial-gradient(circle, white 60%, transparent 61%) padding-box,
+    conic-gradient(darkorange) border-box;
 }
 
 /* Epic (purple) */
 .card-epique {
-  border: 5px solid #b049ff;
-}
-.card-epique .cr-card-halo {
-  box-shadow: 0 0 52px rgba(176,73,255,0.36), inset 0 0 36px rgba(176,73,255,0.08);
-  background: radial-gradient(circle at 50% 20%, rgba(176,73,255,0.28), rgba(176,73,255,0.02));
+  border-radius: 15px;
+  border: 5px solid transparent;
+  background:
+    radial-gradient(circle, white 60%, transparent 61%) padding-box,
+    conic-gradient(#b049ff) border-box;
 }
 
-/* Legendary (gold, special shape) */
+/* Legendary */
 .card-legendaire {
-  border: 6px solid #ffd700;
-  border-radius: 22px;
+  border-radius: 15px;
+  border: 5px solid transparent;
+  background:
+    radial-gradient(circle, white 60%, transparent 61%) padding-box,
+    conic-gradient(red, orange, yellow, green, cyan, blue, purple, red) border-box;
 }
-.card-legendaire .cr-card-halo {
-  box-shadow: 0 0 72px rgba(255,215,0,0.45), inset 0 0 44px rgba(255,215,0,0.10);
-  background: radial-gradient(circle at 50% 20%, rgba(255,215,0,0.30), rgba(255,215,0,0.02));
-}
+
+
 
 /* ===== tilt subtle smoothing (when style applied inline) ===== */
 .cr-card-tilt {
@@ -216,5 +217,83 @@
 
   .cm-info {
     text-align: center;
+  }
+}
+
+
+/*
+ * TEST ANIMATION :
+ */
+
+ /* Overlay noir transparent */
+.selected-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+/* Container global */
+.selected-card-container {
+  display: flex;
+  gap: 20px;
+  transform: translateY(40px);
+  animation: popupAppear 0.4s ease forwards;
+}
+
+/* Animation de montée de la carte */
+.selected-card-animate {
+  width: 250px;
+  border-radius: 10px;
+  transform: scale(0.6) translateY(80px);
+  animation: cardRise 0.5s ease forwards;
+}
+
+@keyframes cardRise {
+  0% {
+    transform: scale(0.6) translateY(80px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Panel de description (slide vers la droite) */
+.selected-card-description {
+  width: 300px;
+  max-height: 380px;
+  padding: 20px;
+  background: #ffffffdd;
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+
+  transform: translateX(40px);
+  opacity: 0;
+  animation: slideIn 0.4s ease forwards 0.15s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation du container entier */
+@keyframes popupAppear {
+  from {
+    transform: translateY(40px);
+  }
+  to {
+    transform: translateY(0);
   }
 }

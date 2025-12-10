@@ -1,9 +1,18 @@
 export default function FilterBar({ rarity, setRarity, type, setType }) {
-  return (
-    <div className="filter-container mb-3 d-flex gap-2">
+  const selectStyle = {
+    height: "100%",
+    padding: "0 12px",
+    background: "transparent",
+    color: "white",
+    border: "transparent",
+    borderLeft: '2px solid #4bb4ff',
+    boxShadow: "none",
+  };
 
+  return (
+    <div style={{ display: "flex", gap: "10px", height: "100%" }}>
       <select
-        className="form-select w-auto"
+        style={selectStyle}
         value={rarity}
         onChange={(e) => setRarity(e.target.value)}
       >
@@ -15,7 +24,7 @@ export default function FilterBar({ rarity, setRarity, type, setType }) {
       </select>
 
       <select
-        className="form-select w-auto"
+        style={selectStyle}
         value={type}
         onChange={(e) => setType(e.target.value)}
       >
@@ -35,7 +44,6 @@ export default function FilterBar({ rarity, setRarity, type, setType }) {
         <option value="ace">Ace</option>
         <option value="electro">Electro</option>
       </select>
-
     </div>
   );
 }

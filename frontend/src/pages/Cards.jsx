@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import SearchBar from "../components/SearchBar";
 import FilterBar from "../components/FilterBar";
 import CardItem from "../components/CardItem";
+import "../components/style/Banniere.css";
 
 export default function Cards() {
   const [cards, setCards] = useState([]);
@@ -57,44 +58,68 @@ export default function Cards() {
   }, [search, rarity, type, cards]);
 
   return (
-    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+      
+      <div class="" style={{
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        width:'67%', 
+        height: '100%'}}>
+        
+        <div>
+          <h1 className="page-title text-light">Cartes</h1>
+        {error && <div className="alert alert-danger">{error}</div>}
+          
+          <div
+            id="filterBar"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "stretch",
+              gap: "10px",
+              padding: "6px",
+              background: "linear-gradient(135deg, #3b246b, #6a4fb6)",
+              borderRadius: "8px",
+              height: "60px",
+              border: "3px solid #4bb4ff",
+              boxShadow: "0 2px 5px rgba(0,0,0,0.05)",
+              marginBottom: "15px",
+              width: '95%'}}>
+            <SearchBar search={search} setSearch={setSearch} />
 
-    <div className="page-container" style={{width:'80%'}}>
-      <h1 className="page-title text-light">Cartes</h1>
-
-      {error && <div className="alert alert-danger">{error}</div>}
-
-      <SearchBar search={search} setSearch={setSearch} />
-
-      <FilterBar
-        rarity={rarity} setRarity={setRarity}
-        type={type} setType={setType}
-      />
-
-      {isLoading && <Loader />}
-
-      {!isLoading && !error && cards.length === 0 && (
-        <div className="alert alert-info">ℹ️ Aucune carte disponible pour le moment.</div>
-      )}
-
-      {!isLoading && !error && cards.length > 0 && filteredCards.length === 0 && (
-        <div className="alert alert-warning">❌ Aucune carte ne correspond à votre recherche.</div>
-      )}
-
-      {!isLoading && !error && (
-        <>
-          <p className="text-light mb-3">Cartes trouvées : <strong>{filteredCards.length}</strong></p>
-
-          <div className="row g-4">
-            {filteredCards.map(card => (
-              <div className="col-6 col-md-4 col-lg-2" key={card.id}>
-                <CardItem card={card} />
-              </div>
-            ))}
+            <FilterBar
+              rarity={rarity} setRarity={setRarity}
+              type={type} setType={setType}
+            />
           </div>
-        </>
-      )}
-    </div>
+        {isLoading && <Loader />}
+
+        {!isLoading && !error && cards.length === 0 && (
+          <div className="alert alert-info">ℹ️ Aucune carte disponible pour le moment.</div>
+        )}
+
+        {!isLoading && !error && cards.length > 0 && filteredCards.length === 0 && (
+          <div className="alert alert-warning">❌ Aucune carte ne correspond à votre recherche.</div>
+        )}
+
+        {!isLoading && !error && (
+          <>
+            <p className="text-light mb-3">Cartes trouvées : <strong>{filteredCards.length}</strong></p>
+
+            <div className="row g-4">
+              {filteredCards.map(card => (
+                <div className="col-6 col-md-4 col-lg-2" key={card.id}>
+                  <CardItem card={card} />
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+        </div>
+        
+      </div>
       
     </div>
   );

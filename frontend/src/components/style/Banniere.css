@@ -67,3 +67,27 @@
             drop-shadow(0 0 10px rgba(255, 140, 255, 0.4));
   }
   
+  .medieval-banner {
+    width: 100%;
+    min-height: 80px; /* hauteur ajustable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 20px;
+  
+    /* Dégradé violet royal */
+    background: linear-gradient(135deg, #3d2172, #5a3ea6, #7d5ce0);
+  
+    /* Bordure style Clash Royale */
+    border-bottom: 6px solid #2a1846;
+    border-radius: 0 0 18px 18px; /* arrondi bas façon bannière */
+  
+    /* Bordure dorée interne */
+    box-shadow:
+      0 0 0 4px #d4af37 inset,
+      0 6px 12px rgba(0,0,0,0.4);
+  
+    position: relative;
+    z-index: 10;
+  }
