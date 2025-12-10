@@ -1,10 +1,10 @@
 import React from 'react';
+import Banniere from '../components/Banniere';
 import HeroBanner from '../components/HeroBanner';
 
 export default function Home1() {
     return (
         <div>
-
             <HeroBanner />
 
             <section className="py-5">

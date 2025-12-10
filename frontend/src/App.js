@@ -15,15 +15,16 @@ export default function App() {
     <div>
       <div>
         <NavBar />
-        <Banniere />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cards" element={<Cards />} />
-            <Route path="/leaders" element={<Leaders />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
+        <Banniere>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cards" element={<Cards />} />
+              <Route path="/leaders" element={<Leaders />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
+        </Banniere>
       </div>
       <Footer />
     </div>

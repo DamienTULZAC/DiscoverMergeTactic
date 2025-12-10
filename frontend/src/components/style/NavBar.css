@@ -1,5 +1,7 @@
 /* Wrapper pour centrer la navbar */
 .mt-navbar-wrapper {
+    position: absolute;
+    z-index: 100; /* Toujours au dessus du papier */
     width: 100%;
     height: 130px;
     display: flex;
@@ -9,14 +11,13 @@
   /* Navbar principale */
   .mt-navbar {
     width: 70%;
-    height: 70px;
+    height: 80px;
     background: linear-gradient(135deg, #3b246b, #6a4fb6);
-    border: 3px solid #4bb4ff;
+    border: 3px solid #f4c542;
     border-radius: 0px 0px 12px 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.5);
     position: relative;
     padding: 0 2rem;
-    z-index: 10;
   }
   
   /* Liens */
@@ -46,7 +47,7 @@
     height: 150px; /* 150% de la navbar */
     width: 150px;
     border-radius: 12px;
-    border: 3px solid #4bb4ff;
+    border: 3px solid #f4c542;
     box-shadow: 0 6px 12px rgba(0,0,0,0.6);
   }
   
