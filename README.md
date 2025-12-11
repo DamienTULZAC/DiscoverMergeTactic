@@ -35,18 +35,29 @@ DiscoverMergeTactic/
 │ │ │ ├─ style
 │ │ │ │ ├─ NavBar.css
 │ │ │ │ ├─ CardItem.css
-│ │ │ │ └─ ...
-│ │ │ ├─ NavBar.jsx
+│ │ │ │ ├─ Footer.css
+│ │ │ │ ├─ HeroBanner.css
+│ │ │ │ ├─ LeaderItem.css
+│ │ │ │ ├─ Loader.css
+│ │ │ │ └─ NavBar.css
+│ │ │ ├─ Banniere.jsx
 │ │ │ ├─ CardItem.jsx
-│ │ │ └─ ...
+│ │ │ ├─ CardModal.jsx
+│ │ │ ├─ FilterBar.jsx
+│ │ │ ├─ Footer.jsx
+│ │ │ ├─ HeroBanner.jsx
+│ │ │ ├─ LeaderItem.jsx
+│ │ │ ├─ LeaderModal.jsx
+│ │ │ ├─ Loader.jsx
+│ │ │ ├─ NavBar.jsx
+│ │ │ └─ SearchBar.jsx
 │ │ ├─ pages/
 │ │ │ ├─ Home.jsx
 │ │ │ ├─ Cards.jsx
 │ │ │ ├─ Leaders.jsx
 │ │ │ └─ About.jsx
 │ │ ├─ services/
-│ │ │ ├─ api.js
-│ │ │ └─ ...
+│ │ │ └─ api.js
 │ │ ├─ App.js
 │ │ ├─ App.css
 │ │ ├─ index.js
@@ -70,12 +81,3 @@ DiscoverMergeTactic/
 ├─ package.json
 └─ .gitignore
 ```
-
-
-## AJOUT
-
-### Front End
-
-- **npm install react-router-dom**
-└─ Permet de gérer la navigation entre plusieurs pages dans ton app React, sans recharger le site à chaque fois (= SPA).
-<br >
