@@ -18,32 +18,34 @@ export default function LeaderModal({ leader, onClose }) {
     if (!details) return null; // le temps du chargement
 
   return (
-    <div className="cm-overlay" onClick={onClose}>
-      <div className="cm-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="cm-close btn-close" onClick={onClose} />
+    <div className="lm-overlay" onClick={onClose}>
+      <div className="lm-modal" onClick={(e) => e.stopPropagation()}>
+        <button className="lm-close btn-close" onClick={onClose} />
 
-        <div className="cm-body">
-          <div className={`cm-image leader-${leader.rarity || "common"}`}>
+        <div className="lm-body">
+          <div className={`lm-image leader-${leader.rarity || "common"}`}>
             <img src={"assets/img/"+details.img} alt={details.name} />
           </div>
 
-          <div className="cm-info">
-            <h2>{details.name}</h2>
+          <div className="lm-info">
+          <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+              <h2>{details.name}</h2>
+            </div>
 
-            <p>
-              <strong>Bonus :</strong> {details.bonus_name}
-            </p>
-            <p>
-              <strong>Effet :</strong> {details.bonus_effect}
-            </p>
-            <p>
-              <strong>PV :</strong> {details.hp}
-            </p>
-            <p>
-              <strong>Date de sortie :</strong> {details.releaseDate}
-            </p>
-
-            <p className="cm-desc">{details.description}</p>
+            <div className="cr-stats-container">
+              <div className="cr-stat-full">
+                <span className="lm-label-full">{details.bonus_name}</span>
+                <span className="lm-value-full">{details.bonus_effect}</span>
+              </div>
+              <div className="lm-stat">
+                <span className="lm-label">pv</span>
+                <span className="lm-value">{details.hp}</span>
+              </div>
+              <div className="lm-stat">
+                <span className="lm-label">sortie</span>
+                <span className="lm-value">{details.releaseDate}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@
 /* ===== base leader card ===== */
 .cr-leader {
   position: relative;
-  width: 100%;
-  aspect-ratio: 3/4;
+  width: 80%;
+  aspect-ratio: 10/12;
   border-radius: 18px;
   overflow: visible;
   cursor: pointer;
@@ -57,4 +57,197 @@
 /* Tilt transition */
 .cr-leader-tilt {
   transition: transform 0.15s ease-out;
+}
+
+
+/* ===== Modal styles ===== */
+.lm-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.lm-modal {
+  width: min(600px, 96%);
+  top: 50px;
+  padding: 18px;
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  position: relative;
+
+  /* Border bleu clair */
+  border: 3px solid #3b6aff;
+
+  /* Dégradé interne du bleu foncé vers le bleu clair en bordure */
+  background: #0d2350;
+background-repeat: no-repeat;
+
+}
+
+
+
+.lm-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.lm-body {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image dans la modal */
+.lm-image {
+  width: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 6px;
+  position: relative;
+}
+
+.lm-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+/* Informations */
+.lm-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.lm-info h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.lm-desc {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+  .lm-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .lm-image {
+    width: 100%;
+  }
+  .lm-info {
+    text-align: center;
+  }
+}
+/* Container global en mode grille 2 colonnes */
+.lm-stats-container {
+  background: rgb(248, 244, 244);
+  padding: 20px;
+  border-radius: 20px;
+  border: 4px solid lightgrey;
+  box-shadow:
+    0 0 15px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(255,255,255,0.2);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 14px;
+
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  font-family: "Supercell-Magic", sans-serif;
+}
+
+/* Style standard d'une stat */
+.lm-stat {
+  display: flex;
+  align-items: center;
+  background: lightgrey;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+/* La dernière stat occupe la largeur des deux colonnes */
+.lm-stat-full {
+  display: flex;
+  align-items: flex-start; /* aligne label et description en haut */
+  background: lightgrey;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  grid-column: span 2;
+  gap: 12px; /* espace entre label et description */
+}
+
+/* label à gauche */
+.lm-label-full {
+  flex: 0 0 50%; /* largeur max 50% */
+  color: #ffd86b;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  margin-left: 8px;
+  flex: 1;
+}
+
+/* description à droite */
+.lm-value-full {
+  flex: 1 1 50%; /* occupe l’autre moitié, peut sauter à la ligne */
+  word-wrap: break-word; /* permet les retours à la ligne si texte long */
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+/* Label */
+.lm-label {
+  color: #ffd86b;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  margin-left: 8px;
+  flex: 1;
+}
+
+/* Valeur */
+.lm-value {
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Icône standard */
+.lm-icon {
+  width: 26px;
+  height: 26px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

@@ -47,7 +47,7 @@ const rulerTab = [
         description: `Tout juste sortie de la rivière d'élixir doré, ce dragon et sa prestance confèrent honneur à ceux qui se battent à ses côtés.`,
     hp: 10,
     releaseDate: "27/10/2025",
-    img: "battlemachine_mt.png"
+    img: "vouivreDoree.png"
 },
 ];
 

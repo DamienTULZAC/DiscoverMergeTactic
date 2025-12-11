@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import { fetchOneCardFromApi } from "../services/api";
 import "./style/CardItem.css"; // réutilise les mêmes styles
 
@@ -7,6 +7,8 @@ export default function CardModal({ card, onClose }) {
   
   const [details, setDetails] = useState(null);
 
+  const modalRef = useRef(null);
+
   useEffect(() => {
     async function load() {
       const data = await fetchOneCardFromApi(card.id);
@@ -14,6 +16,15 @@ export default function CardModal({ card, onClose }) {
       setDetails(data);
     }
     load();
+  }, [card]);
+
+  useLayoutEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   }, [card]);
 
   if (!details) return null; // le temps du chargement

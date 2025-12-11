@@ -130,7 +130,6 @@
 .cm-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(2, 6, 18, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,13 +139,22 @@
 
 .cm-modal {
   width: min(600px, 96%);
-  background: linear-gradient(180deg,#0b0f1a,#0f1220);
-  border-radius: 16px;
   padding: 18px;
+  border-radius: 16px;
+  color: #fff;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   position: relative;
-  color: #fff;
+
+  /* Border bleu clair */
+  border: 3px solid #3b6aff;
+
+  /* Dégradé interne du bleu foncé vers le bleu clair en bordure */
+  background: #0d2350;
+background-repeat: no-repeat;
+
 }
+
+
 
 .cm-close {
   position: absolute;
@@ -221,10 +229,10 @@
 
 /* Container global en mode grille 2 colonnes */
 .cr-stats-container {
-  background: linear-gradient(135deg, #4b2c82, #6f47c9);
+  background: rgb(248, 244, 244);
   padding: 20px;
-  border-radius: 18px;
-  border: 4px solid #e2b13c;
+  border-radius: 20px;
+  border: 4px solid lightgrey;
   box-shadow:
     0 0 15px rgba(0,0,0,0.4),
     inset 0 0 10px rgba(255,255,255,0.2);
@@ -243,22 +251,22 @@
 .cr-stat {
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.1);
+  background: lightgrey;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 2px solid #dca33a;
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
 }
 
 /* La dernière stat occupe la largeur des deux colonnes */
 .cr-stat-full {
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.1);
+  background: lightgrey;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 2px solid #dca33a;
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
   grid-column: span 2;
 }
 
